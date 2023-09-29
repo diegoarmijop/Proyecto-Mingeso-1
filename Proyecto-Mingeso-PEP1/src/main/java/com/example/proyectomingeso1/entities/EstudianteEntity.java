@@ -20,7 +20,7 @@ public class EstudianteEntity {
     private String RUT;
     private String apellidos;
     private String nombres;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private String tipoColegioProcedencia;
     private String nombreColegio;
     private Integer anoEgresoColegio;
