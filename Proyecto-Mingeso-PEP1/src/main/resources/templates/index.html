@@ -2,52 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario de Ingreso de Estudiantes</title>
+    <title>Vista Principal</title>
 </head>
 <body>
-<h2>Formulario de Ingreso de Estudiantes</h2>
-<form th:action="@{/guardar}" method="POST">
-    <!-- Campo RUT -->
-    <label for="RUT">RUT:</label>
-    <input type="text" id="RUT" name="RUT" th:required="required">
-    <br><br>
-
-    <!-- Campo Apellidos -->
-    <label for="apellidos">Apellidos:</label>
-    <input type="text" id="apellidos" name="apellidos" th:required="required">
-    <br><br>
-
-    <!-- Campo Nombres -->
-    <label for="nombres">Nombres:</label>
-    <input type="text" id="nombres" name="nombres" th:required="required">
-    <br><br>
-
-    <!-- Campo Fecha de Nacimiento -->
-    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-    <input type="text" id="fechaNacimiento" name="fechaNacimiento" th:required="required">
-    <br><br>
-
-    <!-- Campo Tipo Colegio Procedencia -->
-    <label for="tipoColegioProcedencia">Tipo Colegio Procedencia:</label>
-    <select id="tipoColegioProcedencia" name="tipoColegioProcedencia">
-        <option value="Municipal">Municipal</option>
-        <option value="Subvencionado">Subvencionado</option>
-        <option value="Privado">Privado</option>
-    </select>
-    <br><br>
-
-    <!-- Campo Nombre del Colegio -->
-    <label for="nombreColegio">Nombre del Colegio:</label>
-    <input type="text" id="nombreColegio" name="nombreColegio" th:required="required">
-    <br><br>
-
-    <!-- Campo Año de Egreso del Colegio -->
-    <label for="anoEgresoColegio">Año de Egreso del Colegio:</label>
-    <input type="number" id="anoEgresoColegio" name="anoEgresoColegio" th:required="required">
-    <br><br>
-
-    <!-- Botón para enviar el formulario -->
-    <input type="submit" value="Guardar Estudiante">
-</form>
+<h1>Mi Aplicación</h1>
+<ul>
+    <li><a th:href="@{/agregar-estudiante}">Agregar Usuario</a></li>
+</ul>
 </body>
 </html>

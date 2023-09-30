@@ -13,7 +13,7 @@ public class EstudianteService {
     @Autowired
     EstudianteRepository estudianteRepository;
 
-    public void guardarEstudiante(String RUT,  String apellidos, String nombres, String fechaNacimiento, String tipoColegioProcedencia, String nombreColegio, Integer anoEgresoColegio){
+    public void guardarEstudiante(String RUT,  String apellidos, String nombres, String fechaNacimiento, String tipoColegioProcedencia, String nombreColegio, Integer anoEgresoColegio, String tipoPago){
 
         EstudianteEntity estudiante = new EstudianteEntity();
 
@@ -24,6 +24,7 @@ public class EstudianteService {
         estudiante.setTipoColegioProcedencia(tipoColegioProcedencia);
         estudiante.setNombreColegio(nombreColegio);
         estudiante.setAnoEgresoColegio(anoEgresoColegio);
+        estudiante.setTipoPago(tipoPago);
         estudianteRepository.save(estudiante);
     }
 }
