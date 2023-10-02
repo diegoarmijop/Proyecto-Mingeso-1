@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Ingreso de RUT</title>
+</head>
+<body>
+<h2>Formulario de Ingreso de RUT</h2>
+<form th:action="@{/guardar}" method="POST">
+    <!-- Campo RUT -->
+    <label for="rut">RUT (Ejemplo: 12345678-9):</label>
+    <input type="text" id="rut" name="rut" th:field="*{rut}" th:required="required" th:placeholder="12345678-9">
+    <br><br>
+
+    <!-- Otros campos del formulario si los hay -->
+
+    <!-- Botón para enviar el formulario -->
+    <input type="submit" value="Guardar">
+</form>
+</body>
+</html>

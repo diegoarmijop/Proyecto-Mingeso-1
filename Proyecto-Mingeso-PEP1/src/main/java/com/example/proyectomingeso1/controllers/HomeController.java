@@ -15,4 +15,9 @@ public class HomeController {
     public String agregarEstudiante() {
         return "agregar-estudiante";
     }
+
+    @GetMapping("/generar-cuotas")
+    public String generarCuotas() {
+        return "generar-cuotas";
+    }
 }
