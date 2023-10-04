@@ -17,7 +17,7 @@ import java.util.Date;
 public class EstudianteEntity {
 
     @Id
-    private String RUT;
+    private String rut;
     private String apellidos;
     private String nombres;
     private String fechaNacimiento;

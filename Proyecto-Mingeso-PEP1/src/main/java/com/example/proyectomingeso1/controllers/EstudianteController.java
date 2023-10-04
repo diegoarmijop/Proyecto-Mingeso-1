@@ -15,9 +15,15 @@ import java.util.Date;
 public class EstudianteController {
     @Autowired
     private EstudianteService estudianteService;
+
+    @GetMapping("/agregar-estudiante")
+    public String agregarEstudiante() {
+        return "agregar-estudiante";
+    }
+
     @PostMapping("/guardar")
     public String guardarEstudiante(
-            @RequestParam String RUT,
+            @RequestParam String rut,
             @RequestParam String apellidos,
             @RequestParam String nombres,
             @RequestParam String fechaNacimiento,
@@ -26,7 +32,7 @@ public class EstudianteController {
             @RequestParam Integer anoEgresoColegio,
             @RequestParam String tipoPago
     ) {
-        estudianteService.guardarEstudiante(RUT, apellidos, nombres, fechaNacimiento, tipoColegioProcedencia, nombreColegio, anoEgresoColegio, tipoPago);
+        estudianteService.guardarEstudiante(rut, apellidos, nombres, fechaNacimiento, tipoColegioProcedencia, nombreColegio, anoEgresoColegio, tipoPago);
 
         return "redirect:/"; // Puedes redirigir a una página de confirmación o a donde sea necesario
     }

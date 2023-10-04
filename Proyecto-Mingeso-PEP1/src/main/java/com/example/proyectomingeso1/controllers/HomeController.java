@@ -11,10 +11,6 @@ public class HomeController {
     public String vistaPrincipal() {
         return "index";
     }
-    @GetMapping("/agregar-estudiante")
-    public String agregarEstudiante() {
-        return "agregar-estudiante";
-    }
 
     @GetMapping("/generar-cuotas")
     public String generarCuotas() {
