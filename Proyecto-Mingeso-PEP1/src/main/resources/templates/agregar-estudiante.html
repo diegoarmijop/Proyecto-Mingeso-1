@@ -49,8 +49,8 @@
     <!-- Campo Tipo Pago -->
     <label for="tipoPago">Tipo Pago:</label>
     <select id="tipoPago" name="tipoPago">
-        <!--<option value="Al contado">Al contado</option>
-        <option value="Cuotas">Cuotas</option>-->
+        <option value="0">Al contado</option>
+        <option value="1">Cuotas</option>
     </select>
     <br><br>
 
@@ -63,9 +63,9 @@
     const tipoPago = document.getElementById("tipoPago");
 
     // Definir las opciones para cada tipo de colegio
-    const opcionesMunicipal = ["AL CONTADO","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-    const opcionesSubvencionado = ["AL CONTADO", "1", "2", "3", "4", "5", "6", "7"];
-    const opcionesPrivado = ["AL CONTADO", "1", "2", "3", "4"];
+    const opcionesMunicipal = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const opcionesSubvencionado = [0, 1, 2, 3, 4, 5, 6, 7];
+    const opcionesPrivado = [0, 1, 2, 3, 4];
 
     // Función para actualizar las opciones del segundo campo
     function actualizarOpciones() {

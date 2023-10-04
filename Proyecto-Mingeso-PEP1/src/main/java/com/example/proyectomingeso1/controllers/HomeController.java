@@ -12,8 +12,4 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/generar-cuotas")
-    public String generarCuotas() {
-        return "generar-cuotas";
-    }
 }

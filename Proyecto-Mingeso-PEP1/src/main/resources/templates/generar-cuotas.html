@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario de Ingreso de RUT</title>
+    <title>TopEducation</title>
 </head>
 <body>
-<h2>Formulario de Ingreso de RUT</h2>
-<form th:action="@{/guardar}" method="POST">
-    <!-- Campo RUT -->
-    <label for="rut">RUT (Ejemplo: 12345678-9):</label>
-    <input type="text" id="rut" name="rut" th:field="*{rut}" th:required="required" th:placeholder="12345678-9">
-    <br><br>
-
-    <!-- Otros campos del formulario si los hay -->
-
-    <!-- Botón para enviar el formulario -->
-    <input type="submit" value="Guardar">
+<form th:action="@{/generar-cuotas}" method = "post">
+    <h1>Generar Cuotas</h1>
+    <b>RUT</b>
+    <input type="text" name="rut"
+           placeholder="Ingrese rut del estudiante" required>
 </form>
+<ul>
+    <li><a th:href="@{/generar-cuotas}">Volver al inicio</a></li>
+</ul>
 </body>
 </html>

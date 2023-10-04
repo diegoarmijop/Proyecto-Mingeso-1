@@ -9,7 +9,7 @@ public class AdminService {
     //CONTADO: 50% de descuento; caso contrario 0%
     public double calcularDescuentoPorTipoPago(EstudianteEntity estudiante){
         double descuentoPorTipoPago = 0;
-        if(estudiante.getTipoPago() == "CONTADO"){
+        if(estudiante.getTipoPago().equals("0")){
             descuentoPorTipoPago = 0.5;
         }else{
             return descuentoPorTipoPago;

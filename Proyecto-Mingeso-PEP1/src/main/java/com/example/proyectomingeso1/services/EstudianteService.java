@@ -13,7 +13,7 @@ public class EstudianteService {
     @Autowired
     EstudianteRepository estudianteRepository;
 
-    public void guardarEstudiante(String rut,  String apellidos, String nombres, String fechaNacimiento, String tipoColegioProcedencia, String nombreColegio, Integer anoEgresoColegio, String tipoPago){
+    public void guardarEstudiante(String rut,  String apellidos, String nombres, String fechaNacimiento, String tipoColegioProcedencia, String nombreColegio, Integer anoEgresoColegio, Integer tipoPago){
 
         EstudianteEntity estudiante = new EstudianteEntity();
 
@@ -27,4 +27,9 @@ public class EstudianteService {
         estudiante.setTipoPago(tipoPago);
         estudianteRepository.save(estudiante);
     }
+
+    public int obtenerCantCuotas(String rut){return estudianteRepository.findCantCuotas(rut);}
+
+    public EstudianteEntity findByRut(String rut){return estudianteRepository.findByRut(rut);}
+
 }

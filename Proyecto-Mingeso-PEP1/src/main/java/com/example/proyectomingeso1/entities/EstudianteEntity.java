@@ -24,6 +24,6 @@ public class EstudianteEntity {
     private String tipoColegioProcedencia;
     private String nombreColegio;
     private Integer anoEgresoColegio;
-    private String tipoPago;
+    private Integer tipoPago;
 
 }

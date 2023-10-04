@@ -30,10 +30,10 @@ public class EstudianteController {
             @RequestParam String tipoColegioProcedencia,
             @RequestParam String nombreColegio,
             @RequestParam Integer anoEgresoColegio,
-            @RequestParam String tipoPago
+            @RequestParam Integer tipoPago
     ) {
         estudianteService.guardarEstudiante(rut, apellidos, nombres, fechaNacimiento, tipoColegioProcedencia, nombreColegio, anoEgresoColegio, tipoPago);
 
-        return "redirect:/"; // Puedes redirigir a una página de confirmación o a donde sea necesario
+        return "redirect:/agregar-estudiante"; // Puedes redirigir a una página de confirmación o a donde sea necesario
     }
 }
