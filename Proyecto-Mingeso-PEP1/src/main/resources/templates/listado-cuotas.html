@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TopEducation</title>
+</head>
+<body>
+<h1>Listado de cuotas</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Monto</th>
+        <th>Número de cuota</th>
+        <th>Estado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cuota:${cuotas}">
+        <td th:text="${cuota.montoCuota}"></td>
+        <td th:text="${cuota.numeroCuota}"></td>
+        <td th:text="${cuota.estado}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

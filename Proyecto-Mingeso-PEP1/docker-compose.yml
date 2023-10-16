@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  postgres-db:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 3198
+      POSTGRES_DB: Mingeso-1
+    ports:
+      - 5432:5432
+
+  mingeso-app:
+    container_name: proyecto-mingeso-1
+    image: dvvp1/proyecto-mingeso-1
+    build: .
+    ports:
+      - "8091:8090"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/Mingeso-1
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=3198
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - postgres-db

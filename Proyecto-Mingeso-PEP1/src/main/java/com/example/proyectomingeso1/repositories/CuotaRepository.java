@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @Repository
 public interface CuotaRepository extends CrudRepository<CuotaEntity, Long> {
-    @Query(value = "select * from cuota as c where c.rut = :rut",
+    @Query(value = "select * from cuota as c where c.rut_estudiante = :rut",
             nativeQuery = true)
     ArrayList<CuotaEntity> findCuotasEstudiante(@Param("rut") String rut);
 }
