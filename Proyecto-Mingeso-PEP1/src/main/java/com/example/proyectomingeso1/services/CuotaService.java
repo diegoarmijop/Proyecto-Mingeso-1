@@ -29,6 +29,9 @@ public class CuotaService {
     public void generarCuotas(String rut){
         int cantCuotas = estudianteService.obtenerCantCuotas(rut);
         double monto = adminService.calcularValorPorCuota(estudianteService.findByRut(rut));
+        if(Integer.toString(cantCuotas).equals("0")){
+            guardarCuota(1,750000.0,"PAGADO",rut);
+        }
         for (int i = 1; i <= cantCuotas; i = i + 1){
             guardarCuota(i,monto,"PENDIENTE",rut);
         }

@@ -6,10 +6,10 @@
 </head>
 <body>
 <h2>Formulario de Ingreso de Estudiantes</h2>
-<form th:action="@{/guardar}" method="POST">
+<form th:action="@{/guardar-estudiante}" method="POST">
     <!-- Campo RUT -->
     <label for="rut">RUT:</label>
-    <input type="text" id="rut" name="rut" th:required="required">
+    <input type="text" id="rut" name="rut" th:required="required" placeholder="Ej. 20223165-1" required>
     <br><br>
 
     <!-- Campo Apellidos -->
@@ -24,7 +24,7 @@
 
     <!-- Campo Fecha de Nacimiento -->
     <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-    <input type="text" id="fechaNacimiento" name="fechaNacimiento" th:required="required">
+    <input type="date" id="fechaNacimiento" name="fechaNacimiento" th:required="required">
     <br><br>
 
     <!-- Campo Tipo Colegio Procedencia -->

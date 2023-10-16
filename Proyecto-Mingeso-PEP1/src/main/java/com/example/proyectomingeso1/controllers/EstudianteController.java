@@ -21,7 +21,7 @@ public class EstudianteController {
         return "agregar-estudiante";
     }
 
-    @PostMapping("/guardar")
+    @PostMapping("/guardar-estudiante")
     public String guardarEstudiante(
             @RequestParam String rut,
             @RequestParam String apellidos,
