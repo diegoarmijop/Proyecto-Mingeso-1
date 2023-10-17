@@ -1,5 +1,16 @@
 version: "3.8"
 services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - proyecto-mingeso-1-1
+      - proyecto-mingeso-1-2
   postgres-db:
     image: postgres:latest
     restart: always
@@ -11,19 +22,35 @@ services:
       POSTGRES_DB: Mingeso-1
     ports:
       - 5432:5432
-
-  mingeso-app:
-    container_name: proyecto-mingeso-1
+  proyecto-mingeso-1-1:
+    container_name: proyecto-mingeso-1-1
     image: dvvp1/proyecto-mingeso-1
-    build: .
     ports:
       - "8091:8090"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/Mingeso-1
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=3198
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
     deploy:
       restart_policy:
         condition: on-failure
     depends_on:
       - postgres-db
+  proyecto-mingeso-1-2:
+    container_name: proyecto-mingeso-1-2
+    image: dvvp1/proyecto-mingeso-1
+    ports:
+      - "8092:8090"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-db:5432/Mingeso-1
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=3198
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - postgres-db
+
+

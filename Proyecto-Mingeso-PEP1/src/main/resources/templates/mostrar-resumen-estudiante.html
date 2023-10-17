@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TopEducation</title>
+</head>
+<body>
+<form th:action="@{/mostrar-resumen}" method = "post">
+    <h1>Generar resumen estudiante</h1>
+    <b>RUT</b>
+    <input type="text" name="rut"
+           placeholder="Ingrese rut del estudiante" required>
+</form>
+<ul>
+    <li><a th:href="@{/generar-cuotas}">Volver al inicio</a></li>
+</ul>
+</body>
+</html>

@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>TopEducation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 <h1>Importar notas</h1>
 <form th:action="@{/importar-notas}" method="post" enctype="multipart/form-data">
     <input type="file" class="form-control" name="file" accept=".csv">
-    <input class = "btn btn-primary"
-           type="submit" value="Cargar el archivo a la Base de Datos">
-    <u><b> <h2 th:text="${mensaje}"></h2></b></u>
+    <input class="btn btn-primary" type="submit" value="Cargar el archivo a la Base de Datos">
+    <u><b><h2 th:text="${mensaje}"></h2></b></u>
 </form>
 </body>
 </html>

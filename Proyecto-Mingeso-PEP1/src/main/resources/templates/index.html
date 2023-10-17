@@ -3,15 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Vista Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #1e6f9f;
+        }
+    </style>
 </head>
 <body>
-<h1>Mi Aplicación</h1>
+<h1>TopEducation</h1>
 <ul>
     <li><a th:href="@{/agregar-estudiante}">Agregar Usuario</a></li>
-    <li><a th:href="@{/generar-cuotas}">Generar cuotas estudiante</a></li>
+    <li><a th:href="@{/generar-cuotas}">Generar Cuotas Estudiante</a></li>
     <li><a th:href="@{/rut-cuotas}">Listado de cuotas</a></li>
     <li><a th:href="@{/importar-notas}">Importar notas</a></li>
-
 </ul>
 </body>
 </html>
+

@@ -15,12 +15,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ExamenService {
 
     @Autowired
-    private ExamenRepository examenRepository;
+    ExamenRepository examenRepository;
+
+    public ArrayList<ExamenEntity> obtenerData() { return (ArrayList<ExamenEntity>) examenRepository.findAll(); }
 
     private final Logger logg = LoggerFactory.getLogger(ExamenService.class);
 
@@ -87,4 +91,35 @@ public class ExamenService {
             }
         }
     }
+
+    public int obtenerNumeroExamenesRendidosPorRut(String rut) {
+        return examenRepository.findByRut(rut).size();
+    }
+
+    public Double calcularPuntajePromedio(String rut) {
+        List<ExamenEntity> examenes = examenRepository.findByRut(rut);
+        if (examenes.isEmpty()) return 0.0;
+
+        double suma = 0.0;
+        for (ExamenEntity examen : examenes) {
+            suma += Double.parseDouble(examen.getPuntaje());
+        }
+        return suma / examenes.size();
+    }
+
+    public Double calcularDescuento(Double puntajePromedio) {
+        if (puntajePromedio >= 950 && puntajePromedio <= 1000) {
+            return 0.10;
+        } else if (puntajePromedio >= 900 && puntajePromedio < 950) {
+            return 0.05;
+        } else if (puntajePromedio >= 850 && puntajePromedio < 900) {
+            return 0.02;
+        } else {
+            return 0.0;
+        }
+    }
+
+
+
+
 }

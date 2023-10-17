@@ -24,4 +24,6 @@ public class CuotaEntity {
     private String estado;
     @Column(name = "rut_estudiante")
     private String rutEstudiante;
+    @Column(name = "fecha_cuota")
+    private String fechaCuota;
 }

@@ -15,7 +15,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class ExamenController {
 
     @Autowired
-    private ExamenService examenService;
+    ExamenService examenService;
+
+    @GetMapping("/mostrar-resumen-estudiante")
+    public String importarResumen(){return "mostrar-resumen-estudiante";}
+
 
     @GetMapping("/importar-notas")
     public String importar(){return "importar-notas";}
@@ -27,5 +31,4 @@ public class ExamenController {
         examenService.leerCsv(file.getOriginalFilename());
         return "redirect:/importar-notas";
     }
-
 }
