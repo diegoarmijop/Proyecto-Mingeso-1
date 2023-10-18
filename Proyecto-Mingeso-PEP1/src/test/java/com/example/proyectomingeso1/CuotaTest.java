@@ -37,30 +37,4 @@ public class CuotaTest {
 
         cuotaService.eliminarCuota(cuota);
     }
-
-    /*@Test
-    void generarCuotas(){
-        estudianteService.guardarEstudiante("20534473-3","Vergara Torres",
-                "Julieta Aneley", "9/9/2000","SUBVENCIONADO",
-                "CNSC",2020,5);
-        cuotaService.generarCuotas("20534473-3");
-        ArrayList<CuotaEntity> cuotas = (ArrayList<CuotaEntity>) cuotaRepository.findAll();
-        for (int i = 0; i < cuotas.size(); i++){
-            if(cuotas.get(i).getRutEstudiante().equals("20534473-3")){
-                assertEquals(i+1,cuotas.get(i).getNumeroCuota());
-                assertEquals(258000,cuotas.get(i).getMontoCuota(),0.0);
-                assertEquals("PENDIENTE",cuotas.get(i).getEstado());
-                cuotaService.eliminarCuota(cuotas.get(i));
-            }
-        }
-        estudianteService.eliminarEstudiante("20534473-3");
-    }*/
-
-
-
-
-
-
-
-
 }
