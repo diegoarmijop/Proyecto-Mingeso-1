@@ -38,7 +38,7 @@ public class EstudianteService {
     //CONTADO: 50% de descuento; caso contrario 0%
     public double calcularDescuentoPorTipoPago(EstudianteEntity estudiante){
         double descuentoPorTipoPago = 0;
-        if(estudiante.getTipoPago().equals("0")){
+        if(estudiante.getTipoPago().equals(0)){
             descuentoPorTipoPago = 0.5;
         }else{
             return descuentoPorTipoPago;
@@ -147,6 +147,11 @@ public class EstudianteService {
             MontoTotalArr[0] = MontoTotalArr[0] + cuota.getMontoCuota();
         });
         return MontoTotalArr[0];
+    }
+
+    public void eliminarEstudiante(String rut){
+        EstudianteEntity estudiante = findByRut(rut);
+        estudianteRepository.delete(estudiante);
     }
 
 }

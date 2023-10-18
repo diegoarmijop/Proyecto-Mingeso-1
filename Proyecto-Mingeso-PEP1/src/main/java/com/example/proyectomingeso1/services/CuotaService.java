@@ -94,6 +94,10 @@ public class CuotaService {
         return cuota.getMontoCuota();
     }
 
+    public void eliminarCuota(CuotaEntity cuota){
+        cuotaRepository.delete(cuota);
+    }
+
 
 
 }
